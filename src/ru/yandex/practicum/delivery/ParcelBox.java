@@ -3,20 +3,21 @@ package ru.yandex.practicum.delivery;
 import java.util.ArrayList;
 
 public class ParcelBox <T extends Parcel>{
-    private final int MAXWEIGTH;
+    private final int maxWeight;
+    private int sumParcelsWeight = 0;
 
     private final ArrayList<T> parcels = new ArrayList<>();
 
     public ParcelBox(int maxWeight) {
-        MAXWEIGTH = maxWeight;
+        this.maxWeight = maxWeight;
     }
 
     public boolean addParcel(T parcel) {
-        int sumParcelsWeight = 0;
-        if ((sumParcelsWeight + parcel.weight) > MAXWEIGTH) {
+        if ((sumParcelsWeight + parcel.weight) > maxWeight) {
             System.out.println("Коробка переполнена");
             return false;
         }
+        sumParcelsWeight += parcel.weight;
         parcels.add(parcel);
         return true;
     }

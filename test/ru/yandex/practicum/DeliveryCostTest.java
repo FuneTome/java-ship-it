@@ -22,13 +22,13 @@ public class DeliveryCostTest {
     @Test
     public void calculateCostPerishableParcel(){
         PerishableParcel perishable = new PerishableParcel("1", "1", 5, 1, 1);
-        Assertions.assertEquals(20, perishable.calculateDeliveryCost(), "Неправильная цена!");
+        Assertions.assertEquals(15, perishable.calculateDeliveryCost(), "Неправильная цена!");
     }
 
     @Test
     public void calculateCostFragileParcel(){
         FragileParcel fragile = new FragileParcel("1", "1", 16, 1);
-        Assertions.assertEquals(48, fragile.calculateDeliveryCost(), "Неправильная цена!");
+        Assertions.assertEquals(64, fragile.calculateDeliveryCost(), "Неправильная цена!");
     }
 
     @Test
